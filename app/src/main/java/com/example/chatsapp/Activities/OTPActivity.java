@@ -1,4 +1,4 @@
-package com.example.chatsapp;
+package com.example.chatsapp.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -73,7 +73,7 @@ ProgressDialog dialog;
                 public void onComplete(@NonNull Task<AuthResult> task) {
                      if (task.isSuccessful()){
                          Toasty.success(OTPActivity.this, "Logged In", Toast.LENGTH_SHORT, true).show();
-                         Intent intent=new Intent(OTPActivity.this,SetupProfileActivity.class);
+                         Intent intent=new Intent(OTPActivity.this, SetupProfileActivity.class);
                          startActivity(intent);
                          finishAffinity();
                      }else {

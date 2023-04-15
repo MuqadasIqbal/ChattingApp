@@ -1,4 +1,4 @@
-package com.example.chatsapp;
+package com.example.chatsapp.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,11 @@ public class PhoneNumberActivity extends AppCompatActivity {
         binding=ActivityPhoneNumberBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         auth=FirebaseAuth.getInstance();
+        if (auth.getCurrentUser()!=null){
+            Intent intent=new Intent(PhoneNumberActivity.this, MainActivity.class);
+            startActivity(intent);
+            finishAffinity();
+        }
         getSupportActionBar().hide();
 
         binding.phoneBox.requestFocus();
@@ -26,9 +31,10 @@ public class PhoneNumberActivity extends AppCompatActivity {
         binding.continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(PhoneNumberActivity.this,OTPActivity.class);
+                Intent intent=new Intent(PhoneNumberActivity.this, OTPActivity.class);
                 intent.putExtra("phoneNumber",binding.phoneBox.getText().toString());
                 startActivity(intent);
+                finishAffinity();
             }
         });
     }

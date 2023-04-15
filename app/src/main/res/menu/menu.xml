@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--<item
+    <item
         android:id="@+id/chats"
         android:icon="@drawable/ic_chats"
         android:title="Chats" />
@@ -11,5 +11,5 @@
     <item
         android:id="@+id/calls"
         android:icon="@drawable/ic_call"
-        android:title="Calls" />-->
+        android:title="Calls" />
 </menu>
